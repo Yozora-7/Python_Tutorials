@@ -4,13 +4,13 @@ def mydecorator(function):
 
     def wrapper(*args, **kwargs):
         print("I am decorating the function")
-        function(* args, ** kwargs)
+        return function(* args, ** kwargs)
     
     return wrapper
 
 @mydecorator # this is decorating the "string" function with the function of "mydecorator"
 def string(person):
-    print("Hello {person}")
+    return f"Hello {person}"
 
 string("Mike")
 
